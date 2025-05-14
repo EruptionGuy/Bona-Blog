@@ -7,4 +7,7 @@ model-mommy==1.6.0
 Pillow==6.2.1
 django-debug-toolbar==1.11
 django-ckeditor==6.0.0
-
+django-crispy-forms==2.4
+crispy-bootstrap4 = "*"
+django-crispy-forms = "*"
+python-dotenv="*"

@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,6 +50,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'crispy_forms',
+    'crispy_bootstrap4',
 
     # My apps.
     'blog.apps.BlogConfig',
@@ -92,9 +95,9 @@ WSGI_APPLICATION = 'bona_blog.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    "default": {
+        "ENGINE": "libsql.db.backends.sqlite3",
+        "NAME": "libsql://blog-eruptionguy.aws-ap-northeast-1.turso.io?authToken=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NDcyNDMzMjgsImlkIjoiMDI3M2Y2ZWItYTUxMy00MWQ4LTkxODktOWViZGZjODhiZjRhIiwicmlkIjoiNWIzMWU3ZTUtYzgwZi00MTZjLTg5OGMtMDkzYjIyMWUyMGZiIn0.p-EzuxIeDErdXoitOOuCHWRfoZvE3r7sAGozBecTUsHdppD8qc5hXcchc17i31Te3VgDKcKKQEHECMjHVYPHAA",
     }
 }
 
@@ -150,6 +153,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Specifies the CSS Framework Crispy Forms should use.
+CRISPY_ALLOWED_TEMPLATE_PACKS = ['bootstrap4']
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Account Settings
